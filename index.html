@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>morning tata</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #f5b3dc;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 5em;
+      animation: goyang 1s infinite alternate;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.3em 0;
+      padding: 0 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0.5em;
+      max-width: 90%;
+      padding: 0 20px;
+    }
+
+    @keyframes goyang {
+      from { transform: rotate(-10deg); }
+      to { transform: rotate(10deg); }
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ec407a;
+    }
+
+    .btn:disabled {
+      background-color: #c0c0c0;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emoji">🌄</div>
+  <h1>Selamat Pagi, Sayang</h1>
+  <p>jangan lupa semangatttt</p>
+  <button class="btn" onclick="nextSemangat()">klik aku terus</button>
+
+  <script>
+    const semangatList = [
+      {
+        title: "",
+        text: "hari ini sekolah ya?"
+      },
+      {
+        emoji: "",
+        title: "",
+        text: "eh nanti kalau mau main pulangnya jangan malam malam yaa"
+      },
+      {
+        emoji: "",
+        title: "",
+        text: "emang kamu ga kasian sama aku"
+      },
+      {
+        emoji: "",
+        title: "",
+        text: "ntr kl aku kangen gimana, ahaha"
+      },
+      {
+        title: "",
+        text: "semangat sayang buat hari ini"
+      },
+      {
+        emoji: "",
+        title: "",
+        text: "oh iyaa jangan lupa papnya biar aku semangat"
+      },
+      {
+        title: "",
+        text: "masa kamu doang yang semangat aku juga pingin semangat kaya kamu"
+      },
+      {
+        title: "",
+        text: "I LOVE YOU MOREEE SAYANGKUU"
+      },
+      {
+        title: "",
+        text: "ehhh kok jadi lancang gini yaaa, maaf yaaa"
+      },
+    ];
+
+    let index = 0;
+
+    function nextSemangat() {
+      const emoji = document.querySelector('.emoji');
+      const title = document.querySelector('h1');
+      const text = document.querySelector('p');
+      const button = document.querySelector('.btn');
+
+      const data = semangatList[index];
+      emoji.textContent = data.emoji;
+      title.textContent = data.title;
+      text.innerText = data.text;
+
+      index++;
+
+      if (index >= semangatList.length) {
+        button.disabled = true;
+        button.textContent = "dah abisss";
+      }
+    }
+  </script>
+
+</body>
+</html>
